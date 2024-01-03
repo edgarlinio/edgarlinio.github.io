@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="asf.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="протеин – это смесь необходимых для спортсмена качественных аминокислот, что принимают участие в восстановлении тканей и других процессах организма.">
+    <meta name="Keywords" content="протеин">
+    <title>protein</title>
+    <link rel="shortcut icon" type="image/jpg" href="logo.ico">
+</head>
+<body>
+    <div id="container">
+          <h1><img src= "logo.png" height="35" width="30" alt="log"> Protein</h1>
+
+          <div class="tabs">
+               <div class="tab active" onclick="showTab('tab1')"> Описание</div>
+               <div class="tab" onclick="showTab('tab2')"> Создание </div>
+           </div>
+
+        <div class="tab-content active" id="tab1">
+            <p>Протеин — это белок в чистом виде, освобожденный от лишних компонентов. Он содержит аминокислоты, которые хорошо сбалансированы, дает организму энергию, насыщает. Протеин укрепляет кости, улучшает обмен веществ.</p>
+        </div>
+
+        <div class="tab-content" id="tab2">
+            <p>В 80е годы для создания концентратов белка стали использовать сыворотку молока, остающуюся в процессе производства сыра. Это и положило начало появления сывороточного протеина и возникновению индустрии спортивного питания.</p>
+        </div>
+          <h1>Как подобрать себе протеин?</h1>
+            <div class="pane">
+              <table>
+                <tr>
+                    <td>
+                        <img src="prot.png" height="250" width="500" alt="lt">
+                    </td>
+                    <td>
+                        <p>Для того чтобы подобрать себе протеин, вам нужно ориентироваться на свою цель в спорте и знать об особенностях разных видов протеина.</p>
+                    </td>
+                </tr>
+              </table>
+            </div>
+
+            <p><img src="pr4.jpg" alt="ботончик" width="800" height="200"></p>
+    <h1>Популярные виды протеина</h1>
+    <p>
+          <img src="pr1.jpg" alt="Фотография 1" width="240" height="240">
+          <img src="pr2.jpg" alt="Фотография 2" width="240" height="240">
+          <img src="pr3.jpg" alt="Фотография 3" width="240" height="240">
+    </p>
+</div>
+         <script>
+            container.onclick = function(event) {
+              if (event.target.className != 'remove-button') return;
+              let pane = event.target.closest('.pane');
+              pane.remove();
+            };
+          </script>
+
+<script>
+        // JavaScript для переключения вкладок
+        function showTab(tabId) {
+            // Скрыть все вкладки
+            var tabs = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+
+            // Установить выбранную вкладку как активную
+            var tab = document.getElementById(tabId);
+            tab.classList.add("active");
+
+            // Установить выбранную вкладку как активную
+            var activeTabs = document.getElementsByClassName("tab");
+            for (var i = 0; i < activeTabs.length; i++) {
+                activeTabs[i].classList.remove("active");
+            }
+
+            // Установить выбранную вкладку как активную
+            var activeTab = document.querySelector(`.tab[data-tab="${tabId}"]`);
+            activeTab.classList.add("active");
+        }
+</script>
+
+</body>
+</html>
